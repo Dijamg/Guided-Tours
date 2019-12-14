@@ -1,6 +1,6 @@
 import React from 'react'
 import { listOfBuildings } from '../Assets/data'
-import BuildingInfo from './Building'
+import BuildingInfo from './BuildingInfo'
 
 const Buildings = () => (
     <div className='buildings-page' id='buildings-page'>

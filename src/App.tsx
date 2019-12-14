@@ -4,6 +4,7 @@ import Navbar from './Components/Navbar'
 import Tours from './Components/Tours'
 import Buildings from './Components/Buildings'
 import About from './Components/About'
+import PoiForm from './Components/PoiForm'
 
 const App = () => (
   <div>

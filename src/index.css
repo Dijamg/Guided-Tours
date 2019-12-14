@@ -104,6 +104,11 @@ code {
   cursor: pointer;
 }
 
+.CSRModal{
+  width: 90vw;
+  height: 10vh;
+  max-width: none!important;
+  }
 
 
 
