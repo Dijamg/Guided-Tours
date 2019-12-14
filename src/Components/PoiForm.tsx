@@ -7,6 +7,12 @@ const PoiForm = ({ building, show, handleClose }: {building: Building, show: boo
     const title = useField('text')
     const description = useField('text')
 
+    const close = () => {
+        title.reset();
+        description.reset()
+        handleClose()
+    }
+
     return(
         <Modal
             dialogClassName={"CSRModal"}
@@ -47,7 +53,7 @@ const PoiForm = ({ building, show, handleClose }: {building: Building, show: boo
                     </Modal.Body>
         
                     <Modal.Footer>
-                    <Button variant="secondary" onClick={ () => handleClose() }>Cancel</Button>
+                    <Button variant="secondary" onClick={ () => close() }>Cancel</Button>
                     <Button type='submit' variant="primary">Add POI</Button>
                     </Modal.Footer>
         </form>
