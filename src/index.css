@@ -108,7 +108,11 @@ code {
   width: 90vw;
   height: 10vh;
   max-width: none!important;
-  }
+}
+
+.form-inline form-group {
+  margin-bottom: 15px;
+}
 
 .modal-body {
 
