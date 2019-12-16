@@ -37,7 +37,7 @@ const PoiForm = (props: Building) => {
                     </div>
                     <div className="form-group">
                         <label htmlFor="exampleFormControlTextarea1">Description of the POI</label>
-                        <textarea className="form-control" id="exampleFormControlTextarea1" rows={3}></textarea>
+                        <textarea className="form-control" id="exampleFormControlTextarea1" rows={8}></textarea>
                     </div>
                     <div className="form-group">
                         <label htmlFor="exampleFormControlFile1">Image</label>
