@@ -114,8 +114,20 @@ code {
   margin-bottom: 15px;
 }
 
-.modal-body {
+.map {
+  height: 25vh;
+  min-height: 10rem;
+}
 
+.locationSelector {
+  position: relative;
+  height: 25vh;
+  min-height: 10rem;
+}
+
+.marker {
+  position: absolute;
+  width: 10px;
 }
 
 
