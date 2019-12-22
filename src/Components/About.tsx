@@ -1,9 +1,5 @@
 import React from 'react'
-import PoiForm from './PoiForm'
-import BuildingInfo from './BuildingInfo'
-import { listOfBuildings } from '../Assets/data'
 
-const building = listOfBuildings[0]
 
 const About = () => (
     <div className='about-page' id='about-page'>

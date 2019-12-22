@@ -1,13 +1,18 @@
 import React,{ useState } from 'react'
-import { Building } from '../Assets/data'
+import { Building, Operators } from '../Assets/types'
 import PoiForm from './PoiForm'
+import PoiList from './PoiList'
 
-const BuildingInfo = (building: Building) => {
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+const BuildingInfo = ({building, operators}:{building: Building, operators: Operators}) => {
+    //Determines the visibility of the PoiForm
+    const [showForm, setShowForm] = useState<boolean>(false);
+    const handleShowForm = () => setShowForm(true);
+    //Determines the visibility of the PoiList
+    const [showList, setShowList] = useState<boolean>(false);
+    const handleShowList = () => setShowList(true);
     
-    const AddForm = () => <PoiForm building={ building } show={ show } handleClose={ () => setShow(false) }/>
+    const AddForm = () => <PoiForm building={ building } show={ showForm } handleClose={ () => setShowForm(false)} operators={operators}/>
+    const ViewList = () => <PoiList building={ building } show={ showList } handleClose={ () => setShowList(false)} pois={operators.pois}/>
     
         return (
             <React.Fragment>
@@ -26,16 +31,17 @@ const BuildingInfo = (building: Building) => {
                                 </h6>
                             </div>
                             <div className='card-footer'>
-                                <button type='button' className='btn btn-primary' onClick={() => handleShow()}>
+                                <button type='button' className='btn btn-primary' onClick={() => handleShowForm()}>
                                     Add a POI
                                 </button>
-                                <button type='button' className='btn btn-success mx-2 text-capitalize'>
+                                <button type='button' className='btn btn-success mx-2 text-capitalize' onClick={() => handleShowList()}>
                                     View POIs
                                 </button>
                             </div>  
                     </div>
                 </div>
                 { AddForm() }
+                { ViewList() }
             </React.Fragment>
         )
      }
