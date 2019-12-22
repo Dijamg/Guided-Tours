@@ -8,8 +8,9 @@ const PoiList = ({ building, show, handleClose, pois }: {building: Building, sho
     const close = () => handleClose()
     const currentPois = () => pois.filter(poi => poi.BuildingId === building.id)
 
+    //If there are no Pois, it return a text that says so, otherwise it return the list of Pois of the selected building.
     const output = () => {
-        if(currentPois.length === 0){
+        if(currentPois().length !== 0){
                 return(<Tab.Container>
                             <Row>
                                 <Col sm={9}>

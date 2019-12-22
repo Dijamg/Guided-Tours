@@ -12,6 +12,7 @@ const App = () => {
   const [buildings, setBuildings] = useState<Building[]>([])
   const [pois, setPois] = useState<Poi[]>([])
 
+  //Next 2 useEffect functions fetch the buildings and their pois from the "server"
   useEffect(() => {
       BuildingService
           .getAll()

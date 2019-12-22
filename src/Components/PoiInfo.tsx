@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Poi, Building } from '../Assets/types'
 
 const PoiInfo = ({ poi, building }: {poi: Poi, building: Building}) => {

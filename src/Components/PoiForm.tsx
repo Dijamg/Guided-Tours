@@ -48,6 +48,7 @@ const PoiForm = ({ building, show, handleClose, operators }: {building: Building
         if( e != null) setFileSelected(e[0])
     }
 
+    //Generates random id for added POI.
     const generateId = () => (
         Math.floor(Math.random() * 1000) + 1
     )
@@ -66,7 +67,7 @@ const PoiForm = ({ building, show, handleClose, operators }: {building: Building
         }
     }
 
-    //Uploads the selected POI image to firebase.
+    //Uploads the selected POI image to firebase and adds the new Poi object as Json data to JSON server.
     const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         try{
