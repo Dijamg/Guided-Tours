@@ -216,7 +216,7 @@ const TourForm = ({ buildings, show, handleClose, operators}: {buildings: Buildi
         <Modal
             dialogClassName={"CSRModal"}
             show={show}
-            onHide={() => handleClose()}
+            onHide={() => close()}
             aria-labelledby="example-modal-sizes-title-lg"
         >
             <Modal.Header closeButton>
