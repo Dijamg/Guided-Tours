@@ -84,11 +84,27 @@ code {
 
 .tours-page {
   min-height: 100vh;
-  background-color: skyblue;
 }
 
 .buildings-page {
   min-height: 100vh;
+}
+
+.buttonLink{
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  margin-left: 1vw;
+  margin-top: 1vh;
+  font-family: arial, sans-serif;
+  color: black;
+  font-size: larger;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.text-slanted {
+  font-style: italic;
 }
 
 .about-page {
@@ -214,6 +230,88 @@ code {
     font-size: xx-large;
     font-weight: bold;
 }
+
+.tour {
+  box-shadow: 10px 10px 5px grey;
+}
+
+.add {
+  box-shadow: 10px 10px 5px grey;
+  text-align: center;
+  cursor: pointer;
+}
+
+.add h6{
+  text-align: center;
+  font-size: x-large;  
+  font-weight: bolder;
+}
+
+.add:hover {
+    -webkit-filter: brightness(70%);
+    filter: brightness(70%);;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all s ease;
+}
+
+.DnD {
+  text-align: center;
+}
+
+.DnD h6{
+  background-color: gray;
+  padding: 1vw;
+  color: azure;
+  font-weight: bolder;
+}
+
+.DnD .list-group-item{
+  margin: 0;
+  padding:0;
+}
+
+.arrowDnd {
+  float: right;
+}
+
+.poiBoard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: grey;
+}
+
+.selectedBoard {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background-color: gainsboro;
+  padding: 15px;
+}
+
+.selectedBoard .card {
+  margin:1%;
+}
+
+.poiBoard .card {
+   cursor: pointer;
+   width:100%;
+}
+
+.dndButtons{
+  text-align: center;
+}
+
+.dndButton {
+  margin: 5%;
+}
+
+
 
 
 

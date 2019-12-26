@@ -1,16 +1,27 @@
 import React,{useState, useEffect} from 'react'
 import Home from './Components/Home'
 import Navbar from './Components/Navbar'
-import Tours from './Components/Tours'
-import Buildings from './Components/Buildings'
+import ManagementPage from './Components/ManagementPage'
 import About from './Components/About'
-import { Building, Poi } from './Assets/types'
+import { Building, Poi, Tour, Operators } from './Assets/types'
 import PoiService from './services/POI'
 import BuildingService from './services/Building'
+import TourService from './services/Tour'
 
 const App = () => {
   const [buildings, setBuildings] = useState<Building[]>([])
   const [pois, setPois] = useState<Poi[]>([])
+  const [tours, setTours] = useState<Tour[]>([])
+
+  //Bundle all states containing pois and buildings for shortening code.
+  const operators: Operators = {
+    buildings: buildings,
+    setBuildings: setBuildings,
+    tours: tours,
+    setTours: setTours,
+    pois: pois,
+    setPois: setPois
+}
 
   //Next 2 useEffect functions fetch the buildings and their pois from the "server"
   useEffect(() => {
@@ -29,16 +40,24 @@ const App = () => {
           })
       }, [])
 
+  useEffect(() => {
+    TourService
+        .getAll()
+        .then(initialTours => {
+          setTours(initialTours)
+        })
+    }, [])  
+      
+
    return (
       <div>
         <Navbar/>
         <Home/>
-        <Buildings
+        <ManagementPage
             buildings={buildings}
-            setBuildings={(arg0: React.SetStateAction<Building[]>) => setBuildings(arg0)}
-            pois={pois}
-            setPois={(arg0: React.SetStateAction<Poi[]>) => setPois(arg0)}/>
-        <Tours/>
+            tours={tours}
+            operators ={operators}
+            />
         <About/>
       </div>
     )

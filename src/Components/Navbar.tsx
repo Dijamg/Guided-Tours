@@ -23,23 +23,12 @@ const Navbar = () => (
                 <Link
                         className="nav-link text-white text-uppercase"
                         activeClass="active"
-                        to="buildings-page"
+                        to="management-page"
                         spy={true}
                         smooth={true}
                         offset={-70}
                         duration= {500}
-                    ><span className='link'>Buildings</span></Link>
-                </li>
-                <li className="nav-item">
-                    <Link
-                        className="nav-link text-white text-uppercase"
-                        activeClass="active"
-                        to="tours-page"
-                        spy={true}
-                        smooth={true}
-                        offset={-70}
-                        duration= {500}
-                    ><span className='link'>Tours</span></Link>
+                    ><span className='link'>Management</span></Link>
                 </li>
                 <li className="nav-item">
                 <Link

@@ -13,7 +13,7 @@ const Home = () => (
         <Link
           className="arrow"
           activeClass="active"
-          to="buildings-page"
+          to="management-page"
           spy={true}
           smooth={true}
           offset={-70}
