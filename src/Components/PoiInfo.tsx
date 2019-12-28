@@ -1,7 +1,7 @@
 import React from 'react'
-import { Poi, Building } from '../Assets/types'
+import { Poi } from '../Assets/types'
 
-const PoiInfo = ({ poi, building }: {poi: Poi, building: Building}) => {
+const PoiInfo = ({ poi }: { poi: Poi }) => {
 
     return(
         <div className='InfoContainer'>

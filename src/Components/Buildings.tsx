@@ -1,8 +1,8 @@
 import React from 'react'
 import BuildingInfo from './BuildingInfo'
-import { Building, Operators } from '../Assets/types'
+import { Operators } from '../Assets/types'
 
-const Buildings = ({buildings, operators }: {buildings: Building[], operators: Operators}) => {
+const Buildings = ({ operators }: { operators: Operators}) => {
 
 
     return(
@@ -16,7 +16,7 @@ const Buildings = ({buildings, operators }: {buildings: Building[], operators: O
                 </div>
                 {/* end of title */}
                 <div className='row'>
-                    {buildings.map(building => {
+                    {operators.buildings.map(building => {
                         return <BuildingInfo key={building.id} building={building} operators={operators} />
                     })}
                 </div>

@@ -17,7 +17,7 @@ const PoiList = ({ building, show, handleClose, pois }: {building: Building, sho
                                 <Tab.Content>
                                     {currentPois().map(currentPoi => (
                                         <Tab.Pane key={currentPoi.id} eventKey={`#${currentPoi.id}`}>
-                                            <PoiInfo key={currentPoi.id} poi={currentPoi} building = {building}/>
+                                            <PoiInfo key={currentPoi.id} poi={currentPoi} />
                                         </Tab.Pane>
                                     ))}
                                 </Tab.Content>

@@ -109,7 +109,13 @@ code {
 
 .about-page {
   height: 100vh;
-  background-color: crimson;
+}
+
+.about{
+  padding: 10vw;
+  font-size: x-large;
+  font-style: italic;
+  text-align: justify;
 }
 
 .active > .link{

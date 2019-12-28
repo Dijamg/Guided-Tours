@@ -1,9 +1,9 @@
 import React from 'react'
 import TourInfo from './TourInfo'
-import { Tour, Building, Operators } from '../Assets/types'
+import { Operators } from '../Assets/types'
 import AddCard from './AddCard'
 
-const Tours = ({ tours, buildings, operators }: {tours: Tour[], buildings: Building[], operators: Operators } ) => {
+const Tours = ({ operators }: { operators: Operators } ) => {
     
     return(
         <div className='tours-page'>
@@ -16,10 +16,10 @@ const Tours = ({ tours, buildings, operators }: {tours: Tour[], buildings: Build
                 </div>
                 {/* end of title */}
                 <div className='row'>
-                    {tours.map(tour => {
-                        return <TourInfo key={tour.id} tour={tour} />
+                    {operators.tours.map(tour => {
+                        return <TourInfo key={tour.id} tour={tour} operators={operators} />
                     })}
-                    <AddCard buildings={buildings} operators={operators}/>
+                    <AddCard operators={operators}/>
                 </div>
             </div>
         </div>

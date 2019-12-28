@@ -1,16 +1,15 @@
 import React, {useState}  from 'react'
-import { Operators, Building } from '../Assets/types'
+import { Operators } from '../Assets/types'
 import TourForm from './TourForm'
 
 
-const AddCard = ({buildings, operators}: {buildings: Building[], operators: Operators }) => {
+const AddCard = ({ operators }: { operators: Operators }) => {
 
        // //Determines the visibility of the TourForm
        const [showForm, setShowForm] = useState<boolean>(false);
        const handleShowForm = () => setShowForm(true);
        
-       const AddForm = () => <TourForm buildings={ buildings } show={ showForm } handleClose={ () => setShowForm(false)} operators={operators}/>
-       // const ViewList = () => <PoiList building={ building } show={ showList } handleClose={ () => setShowList(false)} pois={operators.pois}/>
+       const AddForm = () => <TourForm show={ showForm } handleClose={ () => setShowForm(false)} operators={operators}/>
     
         return (
             <React.Fragment>

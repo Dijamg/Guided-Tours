@@ -54,8 +54,6 @@ const App = () => {
         <Navbar/>
         <Home/>
         <ManagementPage
-            buildings={buildings}
-            tours={tours}
             operators ={operators}
             />
         <About/>

@@ -1,17 +1,14 @@
-import React from 'react'
-import { Tour } from '../Assets/types'
+import React,{ useState } from 'react'
+import { Tour, Operators } from '../Assets/types'
+import EditTourForm from './EditTourForm'
 
 
-const TourInfo = ({tour }:{tour: Tour }) => {
-    // //Determines the visibility of the PoiForm
-    // const [showForm, setShowForm] = useState<boolean>(false);
-    // const handleShowForm = () => setShowForm(true);
-    // //Determines the visibility of the PoiList
-    // const [showList, setShowList] = useState<boolean>(false);
-    // const handleShowList = () => setShowList(true);
+const TourInfo = ({ tour, operators }:{ tour: Tour, operators: Operators }) => {
+    // Determines the visibility of the Tour edition form
+    const [showForm, setShowForm] = useState<boolean>(false);
+    const handleShowForm = () => setShowForm(true);
     
-    // const AddForm = () => <PoiForm building={ building } show={ showForm } handleClose={ () => setShowForm(false)} operators={operators}/>
-    // const ViewList = () => <PoiList building={ building } show={ showList } handleClose={ () => setShowList(false)} pois={operators.pois}/>
+    const EditForm = () => <EditTourForm tour={ tour } show={ showForm } handleClose={ () => setShowForm(false)} operators={operators}/>
     
         return (
             <React.Fragment>
@@ -30,12 +27,13 @@ const TourInfo = ({tour }:{tour: Tour }) => {
                                 </h6>
                             </div>
                             <div className='card-footer'>
-                                <button type='button' className='btn btn-primary'>
+                                <button type='button' className='btn btn-primary' onClick={() => handleShowForm()}>
                                     Edit Tour
                                 </button>
                             </div>  
                     </div>
                 </div>
+                { EditForm() }
             </React.Fragment>
         )
      }

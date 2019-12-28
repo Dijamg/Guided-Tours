@@ -1,0 +1,7 @@
+POST  https://api.vim.ai:5005/buildings/ 
+Content-Type: application/json
+Authorization: ASHpZPiWEcfrGBEMcJMIOSyhvHGAv1LvN9oZ4RJuIoHTp9GNRyYqf6WtlcCKo+gNWeKwndz24ZtyO8uq2oOeUq6MhxLCRmgP2VLuz7GY3U7WodWKfxTGGhYrRZm4GBRzg8IZmDGL
+
+{
+    "id":1
+}

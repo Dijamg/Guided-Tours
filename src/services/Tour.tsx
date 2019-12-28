@@ -14,4 +14,9 @@ const getAll = () => {
     return request.then(response => response.data)
   }
 
-export default { getAll, add }
+  const update = (id: number, newObject: Tour) => {
+    const request = axios.put(`${baseUrl}/${id}`, newObject)
+    return request.then(response => response.data)
+  }
+
+export default { getAll, add, update }

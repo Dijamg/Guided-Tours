@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { Modal, Button, Tab, Row, Col } from 'react-bootstrap'
-import { Building, Poi, Operators, Tour } from '../Assets/types';
+import { Poi, Operators, Tour } from '../Assets/types';
 import  { useField } from '../Components/hooks/hooks'
 import PoiDropdown from './PoiDropdown'
 import Board from './Drag_n_drop/Board'
 import firebase from '../config/firebase'
 import TourService from '../services/Tour'
 
-const TourForm = ({ buildings, show, handleClose, operators}: {buildings: Building[], show: boolean, handleClose: () => void, operators: Operators}) => {
+const TourForm = ({ show, handleClose, operators}: { show: boolean, handleClose: () => void, operators: Operators}) => {
     const title = useField('text')
     //Stores the written description of the POI
     const[description, setDescription] = useState<string>('')
@@ -25,6 +25,7 @@ const TourForm = ({ buildings, show, handleClose, operators}: {buildings: Buildi
         title.reset();
         setDescription('')
         setFileSelected(undefined)
+        setSelectedPois([])
         setNextSelected(false)
         setProgress(0)
         handleClose()
@@ -97,7 +98,6 @@ const TourForm = ({ buildings, show, handleClose, operators}: {buildings: Buildi
 
     //Return the current page of the form.
     const formPage = () => {
-        console.log(nextSelected)
         if(!nextSelected){
             return(
                 <div className='form-group'>
@@ -129,8 +129,8 @@ const TourForm = ({ buildings, show, handleClose, operators}: {buildings: Buildi
                             <Button type='button' className='dndButton' variant="danger" onClick={ () => reset() }>reset</Button>   
                         </Col>
                         <Col sm={5}>
-                            {buildings.map(building => (
-                                <PoiDropdown key={building.id} building={building} pois={operators.pois} />
+                            {operators.buildings.map(building => (
+                                <PoiDropdown key={building.id} building={building} pois={operators.pois} selectedPois={selectedPois} />
                             ))}
                         </Col>
                     </Row>
@@ -178,8 +178,10 @@ const TourForm = ({ buildings, show, handleClose, operators}: {buildings: Buildi
     //Removes the most recently added card
     const undo = () => {
         const board = document.getElementById('selected')
-        if(board !== null) {
+        if(board !== null && board.childNodes.length >= 1 && selectedPois.length > 0) {
             board.removeChild(board.childNodes[board.childNodes.length - 1])
+            setSelectedPois(selectedPois.slice(0, selectedPois.length - 1))
+            console.log(selectedPois)
         }
     }
 

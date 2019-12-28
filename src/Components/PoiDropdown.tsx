@@ -4,10 +4,12 @@ import { ListGroup } from 'react-bootstrap'
 import Card from './Drag_n_drop/Card'
 import Board from './Drag_n_drop/Board'
 
-const PoiDropdown = ({ building, pois }:{ building: Building, pois: Poi[]}) => {
+const PoiDropdown = ({ building, pois, selectedPois }:{ building: Building, pois: Poi[], selectedPois: Poi[]}) => {
     const [showFull, setShowFull] = useState<boolean>(false)
 
-    const filteredPois = () => pois.filter(poi => poi.BuildingId === building.id)
+    const filteredPois = () =>{
+        return pois.filter(poi => (poi.BuildingId === building.id && (!selectedPois.map(p => p.id).includes(poi.id))))
+    }
 
     const output = () => {
         if(showFull){
