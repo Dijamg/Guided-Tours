@@ -26,9 +26,9 @@ const EditTourForm = ({ tour, show, handleClose, operators}: {tour: Tour, show: 
                 .update(tour.id, changedTour)
                 .then(returnedTour => {
                     operators.setTours(operators.tours.map(t => t.id !== tour.id ? t : returnedTour))
-                })
-                console.log("Updated Tour " + tour.name)
-                close()     
+                    console.log("Updated Tour " + tour.name)
+                    close()    
+                }) 
         }catch(exception){
             console.log(exception)
         }    
