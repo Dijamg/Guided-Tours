@@ -5,6 +5,8 @@ const Map = ({markerCoords, setMarkerCoords}: {markerCoords: Coords, setMarkerCo
 
     const AnyReactComponent = ({lat, lng}: {lat:number, lng: number}) => <div className='mapMarker'>X</div>;
 
+    const apiKey = process.env.REACT_APP_GOOGLE_API
+
     const onClick = (e: ClickEventValue) => {
       setMarkerCoords({
         lat: e.lat,
@@ -12,25 +14,29 @@ const Map = ({markerCoords, setMarkerCoords}: {markerCoords: Coords, setMarkerCo
       })
     }
 
-    return (
-      <div style={{ height: '75vh', width: '100%' }}>
-        <GoogleMapReact
-          onClick={ (e) => onClick(e)}
-          bootstrapURLKeys={{ key: 'AIzaSyCzbiF7AugxOd3ycXvWbLLpBq0dlRtZhAM' }}
-          defaultCenter={ {
-            lat: 60.184570,
-            lng: 24.826775
-          }}
-          defaultZoom= {15}
-        >
-          <AnyReactComponent
-            lat={markerCoords.lat}
-            lng={markerCoords.lng}
-          />
-        
-        </GoogleMapReact>
-      </div>
-    );
+    if(apiKey !== undefined){
+      return (
+        <div style={{ height: '75vh', width: '100%' }}>
+          <GoogleMapReact
+            onClick={ (e) => onClick(e)}
+            bootstrapURLKeys={{ key: apiKey }}
+            defaultCenter={ {
+              lat: 60.184570,
+              lng: 24.826775
+            }}
+            defaultZoom= {15}
+          >
+            <AnyReactComponent
+              lat={markerCoords.lat}
+              lng={markerCoords.lng}
+            />
+          
+          </GoogleMapReact>
+        </div>
+      );
+    }else{
+      return <div>GOOGLE MAPS API KEY MISSING</div>
+    }
 }
  
 export default Map;
