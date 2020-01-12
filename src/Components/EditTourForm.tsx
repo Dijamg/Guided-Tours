@@ -3,7 +3,8 @@ import { Tour, Operators, Poi } from '../Assets/types'
 import { Modal, Button, Tab, Row, Col } from 'react-bootstrap'
 import Board from './Drag_n_drop/Board'
 import Card from './Drag_n_drop/Card'
-import PoiDropdown from './PoiDropdown'
+import PoiDropdown from './Drag_n_drop/PoiDropdown'
+import OutdoorPoiDropdown from './Drag_n_drop/OutdoorPoiDropdown'
 import TourService from '../services/Tour'
  
 const EditTourForm = ({ tour, show, handleClose, operators}: {tour: Tour, show: boolean, handleClose: () => void, operators: Operators}) => {
@@ -112,6 +113,7 @@ const EditTourForm = ({ tour, show, handleClose, operators}: {tour: Tour, show: 
                                 {operators.buildings.map(building => (
                                     <PoiDropdown key={building.id} building={building} pois={operators.pois} selectedPois={selectedPois} />
                                 ))}
+                                <OutdoorPoiDropdown pois={operators.pois} selectedPois={selectedPois} />
                             </Col>
                         </Row>
                     </Tab.Container>

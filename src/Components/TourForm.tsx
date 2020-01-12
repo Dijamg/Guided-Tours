@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { Modal, Button, Tab, Row, Col } from 'react-bootstrap'
 import { Poi, Operators, Tour } from '../Assets/types';
 import  { useField } from '../Components/hooks/hooks'
-import PoiDropdown from './PoiDropdown'
+import PoiDropdown from './Drag_n_drop/PoiDropdown'
+import OutdoorPoiDropdown from './Drag_n_drop/OutdoorPoiDropdown'
 import Board from './Drag_n_drop/Board'
 import firebase from '../config/firebase'
 import TourService from '../services/Tour'
@@ -132,6 +133,7 @@ const TourForm = ({ show, handleClose, operators}: { show: boolean, handleClose:
                             {operators.buildings.map(building => (
                                 <PoiDropdown key={building.id} building={building} pois={operators.pois} selectedPois={selectedPois} />
                             ))}
+                            <OutdoorPoiDropdown pois={operators.pois} selectedPois={selectedPois} />
                         </Col>
                     </Row>
                 </Tab.Container>

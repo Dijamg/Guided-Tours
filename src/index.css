@@ -12,37 +12,11 @@ code {
     monospace;
 }
 
-.hero {
-  /* The image used */
-  background-image: url("Assets/landing.png");
-  background-size: cover;
-  background-position: center center;
-  position: relative;
-  top: 0;
-  bottom: 0;
-  height: 100vh;
-}
-
 .navbar{
   color: white;
   -webkit-box-shadow: 0 8px 6px -6px rgb(20, 19, 19);
   -moz-box-shadow: 0 8px 6px -6px rgb(20, 19, 19);
   box-shadow: 0 8px 6px -6px rgb(20, 19, 19);
-}
-
-.aalto-logo-A {
-    font-family: sans-serif;
-    font-weight: bold;
-    font-size: larger;
-    color: white;
-}
-
-.aalto-logo-ex {
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: x-large;
-  color: crimson;
-  margin-right: 2vw;
 }
 
 .title {
@@ -59,34 +33,8 @@ code {
   text-align: center
 }
 
-.down {
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-}
-
-.arrow {
-  position: absolute;
-  width: 10vw;
-  height: 0;
-  left: 45vw;
-  top: 60vh;
-  padding-bottom: 10%;
-  transform: rotate(-45deg);
-  transition: 0.5s;
-  box-shadow: -2px 2px rgba(255,255,255,5);
-  display: inline-block;
-  cursor: pointer;
-}
-
-.arrow:hover {
-  box-shadow: -2px 2px 0 black;
-}
-
-.tours-page {
-  min-height: 100vh;
-}
-
-.buildings-page {
+.buildings-page, .tours-page {
+  padding: 5vh;
   min-height: 100vh;
 }
 
@@ -116,14 +64,6 @@ code {
   font-size: x-large;
   font-style: italic;
   text-align: justify;
-}
-
-.active > .link{
-  color: red;
-}
-
-.nav-link, .navbar-brand {
-  cursor: pointer;
 }
 
 .CSRModal{
@@ -198,11 +138,6 @@ code {
   transition: .5s ease;
 }
 
-.InfoContainer:hover .overlay {
-  width: 100%;
-  left: 0;
-}
-
 .description {
   height: 100%;
 }
@@ -268,7 +203,7 @@ code {
 }
 
 .DnD h6{
-  background-color: gray;
+  background-color: black;
   padding: 1vw;
   color: azure;
   font-weight: bolder;
@@ -287,7 +222,6 @@ code {
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: grey;
 }
 
 .selectedBoard {
@@ -302,10 +236,13 @@ code {
 
 .selectedBoard .card {
   margin:1%;
+  font-weight: bolder;
 }
 
 .poiBoard .card {
    cursor: pointer;
+   margin-bottom: 1%;
+   font-weight: bolder;
    width:100%;
 }
 
@@ -316,6 +253,91 @@ code {
 .dndButton {
   margin: 5%;
 }
+
+.mapMarker {
+  font-weight: bolder;
+  color: crimson;
+}
+
+* {box-sizing: border-box;}
+
+/* Style the navbar */
+.topnav {
+  overflow: hidden;
+  background-color: #e9e9e9;
+}
+
+/* Navbar links */
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Navbar links on mouse-over */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Active/current link */
+.topnav a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+/* Style the input container */
+.topnav .login-container {
+  float: right;
+}
+
+/* Style the input field inside the navbar */
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  width: 150px; /* adjust as needed (as long as it doesn't break the topnav) */
+}
+
+/* Style the button inside the input container */
+.topnav .login-container button {
+  float: right;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .login-container button:hover {
+  background: #ccc;
+}
+
+/* Add responsiveness - On small screens, display the navbar vertically instead of horizontally */
+@media screen and (max-width: 600px) {
+  .topnav .login-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .login-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;
+  }
+}
+
 
 
 

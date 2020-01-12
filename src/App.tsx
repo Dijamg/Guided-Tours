@@ -1,8 +1,12 @@
 import React,{useState, useEffect} from 'react'
-import Home from './Components/Home'
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect
+} from 'react-router-dom'
 import Navbar from './Components/Navbar'
-import ManagementPage from './Components/ManagementPage'
-import About from './Components/About'
+import Buildings from './Components/Buildings'
+import Tours from './Components/Tours'
 import { Building, Poi, Tour, Operators } from './Assets/types'
 import PoiService from './services/POI'
 import BuildingService from './services/Building'
@@ -51,12 +55,14 @@ const App = () => {
 
    return (
       <div>
-        <Navbar/>
-        <Home/>
-        <ManagementPage
-            operators ={operators}
-            />
-        <About/>
+        <Router>
+          <Navbar/>
+          <Route exact path="/">
+            <Redirect to='/POIs'/>
+          </Route>
+          <Route exact path="/POIs" render={() => <Buildings operators={operators}/>} />
+          <Route exact path="/Tours" render={() => <Tours operators={operators}/>} />
+        </Router>
       </div>
     )
    }
