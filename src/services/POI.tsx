@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { Poi } from '../Assets/types'
-const baseUrl = 'https://dijaminapi.herokuapp.com/Buildings'
+const baseUrl = 'https://dijaminapi.herokuapp.com/POIs'
 
 const getAll = () => {
     const request = axios.get(baseUrl)
