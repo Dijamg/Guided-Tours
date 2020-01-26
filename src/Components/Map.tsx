@@ -5,7 +5,7 @@ const Map = ({markerCoords, setMarkerCoords}: {markerCoords: Coords, setMarkerCo
 
     const AnyReactComponent = ({lat, lng}: {lat:number, lng: number}) => <div className='mapMarker'>X</div>;
 
-    const apiKey = process.env.REACT_APP_GOOGLE_API
+    const apiKey = 'AIzaSyA4BnnI6Z0VZdGDPZ5AJiDFLT7eBXtFyYU'
 
     const onClick = (e: ClickEventValue) => {
       setMarkerCoords({
