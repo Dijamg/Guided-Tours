@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { Tour } from '../Assets/types'
-const baseUrl = 'https://guidedtoursjson.herokuapp.com/Tours'
+const baseUrl = 'https://dijaminapi.herokuapp.com/Buildings'
 
 const getAll = () => {
     const request = axios.get(baseUrl)
