@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseUrl = 'https://guidedtoursjson.herokuapp.com/Buildings'
+const baseUrl = 'https://dijaminapi.herokuapp.com/Buildings'
 
 const getAll = () => {
     const request = axios.get(baseUrl)
